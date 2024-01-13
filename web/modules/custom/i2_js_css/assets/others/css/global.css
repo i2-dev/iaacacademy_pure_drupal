@@ -1,0 +1,64 @@
+/* system CSS ------------------------------------------------------------------------------*/
+@media screen and (min-width: 61rem) {
+
+    body .layout-region--node-main,
+    body .layout-region--node-footer {
+        width: 100%;
+    }
+
+    body .layout-node-form .layout-region--node-main .layout-region__content,
+    body .layout-node-form .layout-region--node-footer .layout-region__content {
+        max-width: 100%;
+    }
+}
+
+.field--name-field-start-only-date,
+form#node-programme-form .layout__region--content>:last-child,
+form#node-programme-edit-form .layout__region--content>:last-child {
+    height: 0;
+    opacity: 0;
+}
+
+.paragraphs-dropbutton-wrapper .dropbutton__item:first-of-type~.dropbutton__item {
+    max-width: 24.5rem;
+}
+
+.paragraphs-dropbutton-wrapper .js .dropbutton {
+    min-width: 17rem;
+}
+
+.node-form .form-item--field-tags-104 {
+    display: none;
+}
+
+.node-leaflets-and-publications-form.node-form .form-item--field-tags-104 {
+    display: block;
+}
+
+.paragraphs-content-wrapper .summary-content:nth-child(1) {
+    font-weight: bold;
+}
+
+.node-form .field--name-bp-accordion-section-body .field--name-bp-header,
+.node-form .field--name-bp-accordion-section-body .field--name-bp-width {
+    display: none;
+}
+
+#block-views-block-node-related-programmes-block-1 {
+    display: none;
+}
+
+.related-programmes-item {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.related-programmes-item span {
+    font-weight: bold;
+    color: #000;
+}
+
+.related-programmes-item strong {
+    color: #003ecc;
+    font-weight: 500;
+}

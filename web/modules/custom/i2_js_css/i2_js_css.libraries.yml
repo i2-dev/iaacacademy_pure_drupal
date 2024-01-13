@@ -1,0 +1,46 @@
+both:
+  version: 1.0
+  css:
+    theme:
+      assets/both/css/global.css: {}
+      assets/both/css/listing.css: {}
+  js:
+    assets/both/js/global.js: {}
+    assets/both/js/listing.js: {}
+
+main1:
+  version: 1.0
+  css:
+    theme:
+      assets/main1/css/global.css: {}
+      assets/main1/css/listing.css: {}
+      assets/main1/css/details.css: {}
+  js:
+    assets/main1/js/global.js: {}
+    assets/main1/js/listing.js: {}
+
+
+main2:
+  version: 1.0
+  css:
+    theme:
+      assets/main2/css/global.css: {}
+      assets/main2/css/details.css: {}
+      assets/main2/css/listing.css: {}
+      assets/main2/css/commerce.css: {}
+  js:
+    assets/main2/js/global.js: {}
+    assets/main2/js/listing.js: {}
+
+
+other:
+  version: 1.0
+  css:
+    theme:
+      assets/others/css/global.css: {}
+  js:
+    assets/others/js/global.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,12 @@
+name: i2_js_css
+description: i2_js_css
+type: module
+# core: 8.x
+
+version: '8.x-1.0'
+
+package: 'i2'
+core: '8.x'
+core_version_requirement: ^8 || ^9 || ^10
+project: 'i2_js_css'
+datestamp: 1702528537

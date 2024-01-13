@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * The main module file.
+ */
+// use Drupal\Core\Entity\EntityInterface;
+// use Drupal\node\Entity\Node;
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function i2_js_css_preprocess_html(&$variables)
+{
+  // Get Current ts
+  $variables['attributes']['now_ts'][] = time();
+  $variables['attributes']['now_ymd'][] = date('Ymd');
+
+  $variables['attributes']['now_y'][] = date('Y');
+  $variables['attributes']['now_m'][] = date('m');
+  $variables['attributes']['now_d'][] = date('d');
+
+
+  // Get Path
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['attributes']['current_path'][] = $current_path;
+
+  // Get Lang
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['attributes']['lang_url'][] = $language . "/";
+
+  //********************User *******************/
+  // User Info
+  // $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+  $curr_uid = 0;
+  // if (\Drupal::currentUser()->id()) {
+    $curr_uid = \Drupal::currentUser()->id();
+  // }
+
+  $variables['attributes']['curr_uid'][] = $curr_uid;
+}
+
+
+function i2_js_css_page_attachments(array &$attachments)
+{
+  $_main_theme = "i2_theme";
+  $_main_theme2 = "aristotle";
+
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
+  if (($active_theme == $_main_theme) || ($active_theme == $_main_theme2)) {
+    $attachments['#attached']['library'][] = 'i2_js_css/both';
+  } else {
+    $attachments['#attached']['library'][] = 'i2_js_css/other';
+  }
+
+  if ($active_theme == $_main_theme) {
+    $attachments['#attached']['library'][] = 'i2_js_css/main1';
+  }
+
+  if ($active_theme == $_main_theme2) {
+    $attachments['#attached']['library'][] = 'i2_js_css/main2';
+  }
+}
