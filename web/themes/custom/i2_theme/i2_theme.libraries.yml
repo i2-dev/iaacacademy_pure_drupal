@@ -1,0 +1,20 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/loader.css: {}
+      css/swiper-bundle.min.css: {}
+      css/aos.css: {}
+      css/i2-system.css: {}
+      css/custom-tom.css: {}
+      css/custom.css: {}
+  js:
+    # js/loader.js: {}
+    js/aos.js: {}
+    js/bootstrap-system.js: {}
+    js/swiper-bundle.min.js: {}
+    js/i2.js: {}
+    js/swiper_custom.js: {}
+    js/custom.js: {}
+  dependencies:
+  - core/jquery

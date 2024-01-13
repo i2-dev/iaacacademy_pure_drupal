@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Preprocess variables for html templates.
+ * @param $variables
+ */
+function i2_theme_preprocess_html(&$variables)
+{
+    if ($node = \Drupal::request()->attributes->get('node')) {
+        $variables['attributes']['class'][] = 'page-node-' . $node->id();
+    }
+}
+
+
+
+// Block suggestions for custom block types. 
+function i2_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+    if (isset($variables['elements']['content']['#block_content'])) {
+        array_splice($suggestions, 1, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
+    }
+}
