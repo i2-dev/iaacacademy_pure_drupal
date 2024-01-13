@@ -62,6 +62,11 @@ p {
     padding: 0 22px;
 }
 
+.section-header p {
+    color: #262626;
+    font-size: 20px;
+}
+
 
 
 .text-default span {
@@ -783,11 +788,6 @@ main {
     position: relative;
 }
 
-.frontpage-strategy .section-header p {
-    color: #262626;
-    font-size: 20px;
-}
-
 .frontpage-strategy ul {
     flex-wrap: wrap;
     margin: 0;
@@ -947,7 +947,7 @@ main {
 }
 .frontpage-motto::before {
     background-color: #D6D6D6;
-    content: '';    
+    content: '';
     width: 11.62%;
     aspect-ratio: 11 / 33;
     -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
@@ -956,9 +956,9 @@ main {
     left: 0;
     top: 0;
     transition: all .5s ease-in-out;
-    transition-delay: 0.6s;    
+    transition-delay: 0.6s;
     opacity: 0;
-    transform: translate(-100%, 50%);    
+    transform: translate(-100%, 50%);
 }
 /* obs-active */
 .frontpage-motto.obs-active::before {
@@ -967,7 +967,7 @@ main {
 }
 .frontpage-motto::after {
     background: linear-gradient(210deg, rgba(183, 39, 39, 1) 51.05%, rgba(183, 39, 39, 0.6) 89.28%);
-    content: '';    
+    content: '';
     width: 11.62%;
     aspect-ratio: 11 / 33;
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
@@ -986,11 +986,11 @@ main {
     transform: translate(0, 0);
 }
 .frontpage-motto-cont {
-    display: flex;    
+    display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    max-width: 740px;    
+    max-width: 740px;
     height: 100%;
     float: right;
     padding-left: 8.33333333%;
@@ -1001,7 +1001,7 @@ main {
 .frontpage-motto-cont h2 {
     background-image: url(../image/icon/h2-slash-gray.svg), url(../image/icon/h2-slash-gray.svg);
     background-position: left calc(50% - 3px), right calc(50% - 3px);
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     line-height: 1.5;
     text-transform: uppercase;
     width: fit-content;
@@ -1024,7 +1024,7 @@ main {
 .frontpage-motto-cont p:nth-child(2):before {
     background: url(../image/icon/quote-start.svg) no-repeat;
     background-size: contain;
-    content: '';    
+    content: '';
     height: 91.46%;
     aspect-ratio: 101 / 75;
     position: absolute;
@@ -1034,7 +1034,7 @@ main {
 .frontpage-motto-cont p:last-child:after {
     background: url(../image/icon/quote-end.svg) no-repeat;
     background-size: contain;
-    content: '';    
+    content: '';
     height: 91.46%;
     aspect-ratio: 101 / 75;
     position: absolute;
@@ -1043,11 +1043,11 @@ main {
 }
 .frontpage-motto-img {
     padding-left: 30px;
-    padding-bottom: 9.45%;    
+    padding-bottom: 9.45%;
     transition: all .5s ease-in-out;
     transition-delay: 0.3s;
     opacity: 0;
-    transform: translate(100%, -100%);        
+    transform: translate(100%, -100%);
 }
 /* obs-active */
 .frontpage-motto.obs-active .frontpage-motto-img {
@@ -1061,41 +1061,32 @@ main {
 }
 
 /* frontpage - new */
-.path-frontpage .view-block-news {
-    padding-left: 10%;
-}
-
-.frontpage-New {
+.frontpage-new {
     margin-top: 150px;
+    margin-bottom: 50px;
 }
-
-.frontpage-New .New-header p {
-    max-width: 1100px;
-    font-size: 20px;
-    color: #262626;
-    margin-top: 20px;
-    margin-bottom: 70px;
+.path-frontpage .view-block-news {
+    padding-left: 8.8%;
 }
-
+.path-frontpage .view-block-news .view-content {
+    padding-bottom: 50px;
+}
 .frontpageNews-Swiper .swiper-slide {
     width: 100%;
-    max-width: 510px;
+    max-width: 26.56%;
 }
-
 .news-card {
-    background-color: unset;
+    background: none;
 }
-
 .iaaca-card .card-img-top>img {
-    height: 360px;
+    width: 100%;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
-    -webkit-clip-path: polygon(100% 0, 100% 73%, 92% 100%, 0 100%, 0 0);
-    clip-path: polygon(100% 0, 100% 73%, 92% 100%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 68.24%,  92.94% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 68.24%,  92.94% 100%, 0 100%);
 }
-
 .iaaca-card .card-body {
-    padding: 0;
-    margin-bottom: 20px;
+    padding: 0;    
 }
 
 .iaaca-card .card-body .card-country {
@@ -1104,7 +1095,6 @@ main {
     padding: 5px 17px 5px 11px;
     margin: 20px 0;
 }
-
 .iaaca-card .card-body .card-country.bg-color-C33B1D {
     background: #C33B1D;
 }
@@ -1116,7 +1106,6 @@ main {
 .iaaca-card .card-body .card-country.bg-color-405A9F {
     background: #405A9F;
 }
-
 .iaaca-card .card-body .card-country span {
     font-size: 16px;
     color: #FFF;
@@ -1126,23 +1115,23 @@ main {
 .iaaca-card .card-body .card-title {
     color: #3C4854;
     font-size: 20px;
-    font-weight: bold;
-    width: 90%;
+    font-weight: 700;
+    line-height: 1.5;
+    width: 92.94%;
+    min-height: 90px;
+    margin-bottom: 15px;
 }
-
 .iaaca-card .card-body .card-date {
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
-.iaaca-card .card-body .card-date span {
     color: #B72727;
     font-size: 18px;
+    line-height: 27px;    
 }
-
 .iaaca-card .card-body>a {
-    padding: 7px 20px;
     border: 2px solid #C33B1D;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 7px 20px;
 }
 
 /* Detail Page  */
@@ -1671,7 +1660,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     }
     .frontpage-motto-cont p:nth-child(2) {
         margin-right: 0;
-        margin-top: -45px;        
+        margin-top: -45px;
         padding-top: 1.64em;
     }
     .frontpage-motto-cont p:nth-child(2):before {
@@ -1682,9 +1671,9 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .frontpage-motto-cont p:last-child {
         padding-bottom: 1.64em;
     }
-    .frontpage-motto-cont p:last-child:after {        
-        content: '';    
-        height: 50%;                
+    .frontpage-motto-cont p:last-child:after {
+        content: '';
+        height: 50%;
         right: -40px;
         bottom: 0;
     }
@@ -2008,7 +1997,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     }
     .frontpage-motto-img {
         margin-top: -20px;
-        padding-bottom: 40px;       
+        padding-bottom: 40px;
     }
 }
 
@@ -2182,7 +2171,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .frontpage-motto-cont p {
         letter-spacing: -0.9px;
     }
-    .frontpage-motto-img {    
+    .frontpage-motto-img {
         padding-bottom: 25px;
     }
 }
