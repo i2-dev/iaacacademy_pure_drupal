@@ -34,7 +34,7 @@ jQuery(function ($) {
         //     delay: 3000,
         // },
         slidesPerView: "auto",
-        spaceBetween: 25,
+        spaceBetween: 20,
         // fadeEffect: {
         //     crossFade: true,
         // },
@@ -47,6 +47,11 @@ jQuery(function ($) {
         navigation: {
             nextEl: ".frontpageNews-button-next",
             prevEl: ".frontpageNews-button-prev",
+        },
+        breakpoints: {
+            768: {
+                spaceBetween: 26,
+            },            
         },
     });
     var ProgList1Swiper = new Swiper(".prog1-Swiper", {

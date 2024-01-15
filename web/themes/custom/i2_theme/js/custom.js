@@ -24,6 +24,12 @@ jQuery(function ($) {
             $(".header-search .dropdown-menu").slideToggle("500");
         });
     });
+    // header navnbar 手機端
+    $('nav#block-i2-theme-main-navigation>ul.navbar-nav').prepend('<li class="nav-item"><a href="/" class="nav-link" data-drupal-link-system-path="node/1">Home</a></li>');
+    $("#block-i2-theme-main-navigation>ul ul.dropdown-menu").each(function () {
+        $(this).removeClass('navbar-nav');
+        $(this).before('<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">X</button>');
+  });
     //  frontpage video
     $('#academyModal').on('hidden.bs.modal', function (event) {
         $('#academyModal video').trigger('pause');
@@ -38,6 +44,8 @@ jQuery(function ($) {
         var year = new Date().getFullYear();
         $("#year_time").html(year);
     });
+
+    $('.block-views-blockblock-news-block-2 .view-content .views-row').removeClass('swiper-slide');
     // AOS
     AOS.init({
         duration: 1000,
