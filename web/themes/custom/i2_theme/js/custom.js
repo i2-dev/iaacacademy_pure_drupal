@@ -25,11 +25,11 @@ jQuery(function ($) {
         });
     });
     // header navnbar 手機端
-    $('nav#block-i2-theme-main-navigation>ul.navbar-nav').prepend('<li class="nav-item"><a href="/" class="nav-link" data-drupal-link-system-path="node/1">Home</a></li>');
+    // $('nav#block-i2-theme-main-navigation>ul.navbar-nav').prepend('<li class="nav-item"><a href="/" class="nav-link" data-drupal-link-system-path="node/1">Home</a></li>');
     $("#block-i2-theme-main-navigation>ul ul.dropdown-menu").each(function () {
         $(this).removeClass('navbar-nav');
         $(this).before('<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">X</button>');
-  });
+    });
     //  frontpage video
     $('#academyModal').on('hidden.bs.modal', function (event) {
         $('#academyModal video').trigger('pause');
@@ -44,8 +44,21 @@ jQuery(function ($) {
         var year = new Date().getFullYear();
         $("#year_time").html(year);
     });
-
     $('.block-views-blockblock-news-block-2 .view-content .views-row').removeClass('swiper-slide');
+    // back to top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('#block-i2-theme-backtotop').css('opacity', '1');
+        } else {
+            $('#block-i2-theme-backtotop').css('opacity', '0');
+        }
+    });
+    $('.sidebar-back-to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 200);
+        return false;
+    });
     // AOS
     AOS.init({
         duration: 1000,
