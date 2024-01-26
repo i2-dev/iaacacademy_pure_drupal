@@ -53,6 +53,10 @@
     font-weight: 700;
 }
 
+.fs-24px {
+    font-size: 24px;
+}
+
 .fs-22px {
     font-size: 22px;
 }
@@ -168,7 +172,7 @@
 
 .text-red,
 .text-red a {
-    color: #BF1961 !important;
+    color: #B72727 !important;
 }
 
 .text-red a:hover,
@@ -181,7 +185,7 @@
 }
 
 .alink {
-    color: #BF1961;
+    color: #B72727;
     text-decoration: underline;
 }
 
@@ -344,7 +348,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+h2>span {
     font-size: var(--font-size-xl);
 }
 
