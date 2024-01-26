@@ -5,8 +5,7 @@ global-styling:
       css/loader.css: {}
       css/swiper-bundle.min.css: {}
       css/aos.css: {}
-      css/i2-system.css: {}
-      css/custom-tom.css: {}
+      css/i2-system.css: {}      
       css/custom.css: {}
   js:
     # js/loader.js: {}
