@@ -8,7 +8,7 @@ global-styling:
       css/i2-system.css: {}      
       css/custom.css: {}
   js:
-    # js/loader.js: {}
+    js/loader.js: {}
     js/aos.js: {}
     js/bootstrap-system.js: {}
     js/swiper-bundle.min.js: {}
