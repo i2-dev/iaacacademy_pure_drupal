@@ -445,8 +445,7 @@ main {
 
 .frontpagebanner-Swiper .banner-title .title {
     color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
-    font-family: Poppins;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);    
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
@@ -817,17 +816,18 @@ main {
 }
 
 .section-img-cont .section-cont a {
-    background-color: #fff;
-    border-radius: 27px;
+    background-color: #fff;    
     color: #3C4854;
     font-size: 18px;
     font-weight: 500;
     line-height: 54px;
-    display: block;
-    width: fit-content;
+    display: block;    
+    width: fit-content;    
     margin-top: 50px;
     padding-left: 34px;
     padding-right: 46px;
+    -webkit-clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 12px) 100%, 0 100%, 0 27px);
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 27px), calc(100% - 12px) 100%, 0 100%, 0 27px);
     position: relative;
     transition: all 0.2s ease;
 }
@@ -1336,7 +1336,7 @@ main {
     display: inline-block;
     line-height: 26px;
     height: 36px;
-    margin: 20px 0;
+    margin: 24px 0 20px;
     padding: 5px 17px 5px 11px;
     
 }
@@ -2455,11 +2455,11 @@ footer .footer-bottom .region-footer-end {
     flex-direction: unset;
 }
 footer .footer-top .region-footer .navbar-nav .nav-item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 footer .footer-top .region-footer .navbar-nav .nav-link {    
     color: #FFF;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     display: block;
     padding: 0;
@@ -2478,7 +2478,7 @@ footer .footer-bottom .region-footer-end #block-i2-theme-sitemap .navbar-nav .na
 footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav .nav-link {
     padding: 0;
     color: #FFF;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
 }
 
@@ -2490,7 +2490,7 @@ footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav>l
 }
 
 footer .footer-bottom #block-i2-theme-copyright-2 p {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
 }
 
@@ -2517,6 +2517,9 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .block-views-blockprogramme-listing-block-2 .view-content {
     position: relative;
 }
+.view-programme-listing .swiper-pointer-events {
+    padding-bottom: 60px;
+}
 
 .view-programme-listing .swiper-button-next,
 .view-programme-listing .swiper-button-prev {
@@ -2528,13 +2531,23 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-next,
 .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-next {
     right: -18px;
-    top: calc(50% - 40px);
+    top: calc(69% - 255px);
 }
 
 .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-prev,
 .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-prev {
     left: -18px;
-    top: calc(50% - 40px);
+    top: calc(69% - 255px);
+}
+@media only screen and (min-width: 1600px) {
+    .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-next,
+    .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-next {
+        right: -40px;
+    }
+    .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-prev,
+    .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-prev {
+        left: -40px;
+    }
 }
 
 .block-views-blockprogramme-listing-block-2 {
@@ -2702,7 +2715,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     padding-left: 0;
 }
 .sub-page-content ul li {
-    background: url(../image/icon/ul-slash-red.svg) left 4px no-repeat; 
+    background: url(../image/icon/ul-slash-red.svg) left 2px no-repeat; 
     background-size: auto 20px;   
     line-height: 1.5;
     margin-bottom: 20px;
@@ -2755,13 +2768,15 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 }
 #edit-submit-block-search {
     width: 182px;
-    border-radius: 30px;
+    /* border-radius: 30px; */
+    -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 10px) 100%, 0 100%, 0 25px);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 10px) 100%, 0 100%, 0 25px);
 }
 .page-node-18 .view-block-search .view-content {
     margin-top: 50px;
 }
 .page-node-18 .view-block-search .view-content .views-row a {
-    background: url(../image/icon/ul-slash-red.svg) left 4px no-repeat;
+    background: url(../image/icon/ul-slash-red.svg) left 2px no-repeat;
     background-size: auto 20px;       
     color: #000;
     display: block;
@@ -2783,7 +2798,11 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     width: 83.33333333%;
 }
 .page-node-8 .sub-page-content .col-12 h2 {
-    font-size: calc(var(--font-size-lg) * 0.667);
+    font-size: 24px;
+}
+.page-node-8 .sub-page-content .col-12 h3 {
+    color: #B72727;
+    font-size: 22px;
 }
 
 /* Sitemap Page ******************************************/
@@ -2824,7 +2843,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     font-weight: 700;
 }
 .path-sitemap .sitemap-item ul ul>li>a {
-    background: url(../image/icon/ul-slash-red.svg) left 4px no-repeat;
+    background: url(../image/icon/ul-slash-red.svg) left 2px no-repeat;
     background-size: auto 20px;
     color: #000;
     font-size: 16px;
@@ -4052,7 +4071,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
         bottom: -20px;
     }
 
-    /* programme listing */
+    /* Programme listing */
     .view-block-news .view-header {
         padding-left: 10px;
         padding-right: 20px;
@@ -4072,6 +4091,15 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .block-views-blockprogramme-listing-block-2::after,
     .block-views-blockblock-news-block-2::after {        
         width: 40%;        
+    }
+    .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-next,
+    .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-next {        
+        top: 29vw;
+    }
+
+    .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-prev,
+    .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-prev {        
+        top: 29vw;
     }
 
     /* footer */
