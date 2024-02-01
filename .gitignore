@@ -47,3 +47,7 @@ web/modules/.DS_Store
 
 # Bak files
 *--bak*
+
+# Private & Tmp folders
+/_private*
+/_tmp*
