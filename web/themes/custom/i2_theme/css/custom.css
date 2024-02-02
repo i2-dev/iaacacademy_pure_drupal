@@ -411,7 +411,8 @@ main {
 }
 
 .frontpagebanner-Swiper .banner-content {
-    position: relative;
+    background-color: #000;
+    position: relative;    
 }
 
 .frontpagebanner-Swiper .desktop-banner {
