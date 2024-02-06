@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+function i2_csrf_token_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+    $current_uid = \Drupal::currentUser()->id();
+
+    if ($current_uid == 0) {
+        if (!isset($form['#token'])) {
+            $form['csrf_token'] = array(
+                '#type' => 'token',
+                '#default_value' => \Drupal::csrfToken()->get()
+            );
+
+            //////array_unshift($form['#validate'], '_anonymous_token_validate_csrf_token');
+            //////array_unshift($form['#submit'], '_anonymous_token_submit_csrf_token');
+
+            ////$form['#validate'][] = '_anonymous_token_validate_csrf_token';
+            ////$form['#submit'][] = '_anonymous_token_submit_csrf_token';
+
+            /*
+            // store current session id
+            // touching $_SESSION alone seems to preserve the session id after login
+            $sess_id = session_id();
+            if (isset($_SESSION))
+                $_SESSION['anon_session_id'] = $sess_id;
+            else
+                $_SESSION = array('anon_session_id' => $sess_id);
+    */
+        }
+    }
+}
+
+function _anonymous_token_validate_csrf_token($form, FormStateInterface &$form_state)
+{
+}
+
+
+
+function _anonymous_token_submit_csrf_token($form, FormStateInterface &$form_state)
+{
+    $token = '';
+    $current_csrf_token = \Drupal::csrfToken()->get();
+
+    if ($form_state->getValue('csrf_token')) {
+        $token = $form_state->getValue('csrf_token');
+    }
+
+    if ($token != '') {
+        \Drupal::logger('i2_csrf_token')->notice('token: ' . $token . '; csrfToken from Drupal: ' . $current_csrf_token . '; ');
+
+        if ($token != $current_csrf_token) {
+            // Not a valid token!
+            $query = \Drupal::request()->query->all();
+            $url = Url::fromRoute('<current>', array('query' => $query));
+
+            // Setting this error will cause the form to fail validation.
+            $form_state->setErrorByName('form_token', t('The form has become outdated. Copy any unsaved work in the form below and then <a href="@link">reload this page</a>.', array('@link' => $url)));
+        }
+    }
+}
