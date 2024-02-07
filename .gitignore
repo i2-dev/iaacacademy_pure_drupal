@@ -51,3 +51,6 @@ web/modules/.DS_Store
 # Private & Tmp folders
 /_private*
 /_tmp*
+
+# _htpasswd
+/_htpasswd
