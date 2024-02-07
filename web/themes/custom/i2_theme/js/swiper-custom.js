@@ -1,38 +1,8 @@
 jQuery(function ($) {
-    var frontpagebannerSwiper = new Swiper(".frontpagebanner-Swiper", {
-        // autoplay: {
-        //     delay: 3000,
-        // },
-        speed: 1000,
-        fadeEffect: {
-            crossFade: true,
-        },
-        watchOverflow: true,
-        loop: true,
-        pagination: {
-            el: ".frontpageswiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper1-button-next",
-            prevEl: ".swiper1-button-prev",
-        },
-    });
-    // banner button
-    $(".block-views-blockfrontpage-banner-block-1 .component .swiper-button .swiper-button-play").click(function () {
-        $(this).addClass('d-none');
-        frontpagebannerSwiper.autoplay.stop();
-        $(".block-views-blockfrontpage-banner-block-1 .component .swiper-button .swiper-button-stop").removeClass('d-none');
-    });
-    $(".block-views-blockfrontpage-banner-block-1 .component .swiper-button .swiper-button-stop").click(function () {
-        $(this).addClass('d-none');
-        frontpagebannerSwiper.autoplay.start();
-        $(".block-views-blockfrontpage-banner-block-1 .component .swiper-button .swiper-button-play").removeClass('d-none');
-    });
     var frontpageNewsSwiper = new Swiper(".frontpageNews-Swiper", {
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
         slidesPerView: "auto",
         spaceBetween: 20,
         // fadeEffect: {
@@ -55,9 +25,9 @@ jQuery(function ($) {
         },
     });
     var ProgList1Swiper = new Swiper(".prog1-Swiper", {
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
         // centeredSlides: true,
         slidesPerView: 3,
         spaceBetween: 26,
@@ -91,9 +61,9 @@ jQuery(function ($) {
         },
     });
     var ProgList2Swiper = new Swiper(".prog2-Swiper", {
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
         // centeredSlides: true,
         slidesPerView: 3,
         spaceBetween: 26,
@@ -124,6 +94,24 @@ jQuery(function ($) {
                 slidesPerView: 3,
                 spaceBetween: 26
             },
+        },
+    });
+    var frontpagebannerSwiper = new Swiper(".video-Swiper", {
+        autoplay: {
+            delay: 3000,
+        },
+        speed: 1000,
+        fadeEffect: {
+            crossFade: true,
+        },
+        watchOverflow: true,
+        pagination: {
+            el: ".videoswiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".videoswiper-button-next",
+            prevEl: ".videoswiper-button-prev",
         },
     });
 });

@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    /////////// common
+    var url = window.location.href;
     // header fixed
     $(window).scroll(function () {
         if ($(window).scrollTop() > 0) {
@@ -18,6 +20,37 @@ jQuery(function ($) {
             $("#block-i2-theme-languageswitcher .dropdown-menu").slideToggle("500");
         });
     });
+    var frontpagebannerSwiper = new Swiper(".frontpagebanner-Swiper", {
+        autoplay: {
+            delay: 3000,
+        },
+        speed: 1000,
+        fadeEffect: {
+            crossFade: true,
+        },
+        watchOverflow: true,
+        loop: true,
+        pagination: {
+            el: ".frontpageswiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper1-button-next",
+            prevEl: ".swiper1-button-prev",
+        },
+    });
+    // banner button
+    $(".block-views-blockfrontpage-banner-block-1 .swiper-button-play").click(function () {
+        $(this).addClass('d-none');
+        frontpagebannerSwiper.autoplay.stop();
+        console.log(123);
+        $(".block-views-blockfrontpage-banner-block-1 .swiper-button-stop").removeClass('d-none');
+    });
+    $(".block-views-blockfrontpage-banner-block-1 .swiper-button-stop").click(function () {
+        $(this).addClass('d-none');
+        frontpagebannerSwiper.autoplay.start();
+        $(".block-views-blockfrontpage-banner-block-1 .swiper-button-play").removeClass('d-none');
+    });
     // header-search 點擊
     $(function () {
         $(".header-search .header-search-header").click(function () {
@@ -31,12 +64,33 @@ jQuery(function ($) {
         $(this).before('<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">X</button>');
     });
     //  frontpage video
-    $('#academyModal').on('hidden.bs.modal', function (event) {
+    $(".video-Swiper .video-content-wrap").click(function () {
+        var title = $.trim($(this).find('.video-content-title').text());
+        var img_link = $(this).find('>div>img').attr('src');
+        var video_link = $.trim($(this).find('.video-link').text());
+        console.log(title);
+        $('#academyModal .modal-header .modal-title').text(title);
+        $('#academyModal .modal-body video').attr('poter', img_link);
+        $('#academyModal .modal-body video').attr({
+            'poter': img_link,
+            "src": video_link
+        });
+        setTimeout(function () {
+            var video = $("#academyModal video")[0];
+            if (video.paused) {
+                $('#academyModal video').trigger('play');
+            };
+        }, 200);
+    });
+    $('#academyModal').on('hidden.bs.modal', function (e) {
         $('#academyModal video').trigger('pause');
     });
-    $('#academyModal').on('show.bs.modal', function (event) {
-        $('#academyModal video').trigger('play');
-    });
+    // $('#academyModal').on('hidden.bs.modal', function (event) {
+    //     $('#academyModal video').trigger('pause');
+    // });
+    // $('#academyModal').on('show.bs.modal', function (event) {
+    //     $('#academyModal video').trigger('play');
+    // });
     ////////////// about us
     $('.block-views-blockblock-news-block-2 .view-content .swiper-slide').addClass('col-12 col-md-6 col-lg-4');
     ////////////// update footer date
@@ -45,6 +99,10 @@ jQuery(function ($) {
         $("#year_time").html(year);
     });
     $('.block-views-blockblock-news-block-2 .view-content .views-row').removeClass('swiper-slide');
+    // links
+    $('.paragraph--type--links').addClass('container-xxl');
+    $('.paragraph--type--links>div.paragraph__column').addClass('row');
+    $('.paragraph--type--links>div.paragraph__column>div').addClass('col-12 col-sm-6 col-lg-3');
     // back to top
     $(window).scroll(function () {
         if ($(this).scrollTop() > 500) {
@@ -59,6 +117,14 @@ jQuery(function ($) {
         }, 200);
         return false;
     });
+    // translate
+    setTimeout(function () {
+        if (url.indexOf("/zh-hant") >= 0) { 
+          $('.block-system-breadcrumb-block ol.breadcrumb>li:nth-child(1)>a').text('首頁');
+        } else if (url.indexOf("/zh-hans") >= 0) { 
+            $('.block-system-breadcrumb-block ol.breadcrumb>li:nth-child(1)>a').text('首页');
+        } else { };
+    }, 200);
     // AOS
     AOS.init({
         duration: 1000,

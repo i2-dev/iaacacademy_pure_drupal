@@ -13,7 +13,7 @@ global-styling:
     js/bootstrap-system.js: {}
     js/swiper-bundle.min.js: {}
     js/i2.js: {}
-    js/swiper_custom.js: {}
+    js/swiper-custom.js: {}
     js/custom.js: {}
   dependencies:
   - core/jquery
