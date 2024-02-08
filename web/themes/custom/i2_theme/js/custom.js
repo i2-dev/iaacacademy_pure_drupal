@@ -43,7 +43,6 @@ jQuery(function ($) {
     $(".block-views-blockfrontpage-banner-block-1 .swiper-button-play").click(function () {
         $(this).addClass('d-none');
         frontpagebannerSwiper.autoplay.stop();
-        console.log(123);
         $(".block-views-blockfrontpage-banner-block-1 .swiper-button-stop").removeClass('d-none');
     });
     $(".block-views-blockfrontpage-banner-block-1 .swiper-button-stop").click(function () {
@@ -51,10 +50,18 @@ jQuery(function ($) {
         frontpagebannerSwiper.autoplay.start();
         $(".block-views-blockfrontpage-banner-block-1 .swiper-button-play").removeClass('d-none');
     });
-    // header-search 點擊
+    // header-search
     $(function () {
         $(".header-search .header-search-header").click(function () {
             $(".header-search .dropdown-menu").slideToggle("500");
+        });
+    });
+    $('header .header-search .ld-search-form input').on('input', function() {
+        var inputValue = $(this).val();
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                window.location.href = ('/search-0?keys=' + inputValue);
+            }
         });
     });
     // header navnbar 手機端
@@ -68,7 +75,6 @@ jQuery(function ($) {
         var title = $.trim($(this).find('.video-content-title').text());
         var img_link = $(this).find('>div>img').attr('src');
         var video_link = $.trim($(this).find('.video-link').text());
-        console.log(title);
         $('#academyModal .modal-header .modal-title').text(title);
         $('#academyModal .modal-body video').attr('poter', img_link);
         $('#academyModal .modal-body video').attr({
