@@ -2677,6 +2677,9 @@ footer .footer-bottom .region-footer-end {
     justify-content: space-between;
     flex-direction: unset;
 }
+footer .footer-bottom .region-footer-end {
+    flex-wrap: wrap;
+}
 footer .footer-top .region-footer .navbar-nav .nav-item {
     margin-bottom: 10px;
 }
@@ -2708,11 +2711,16 @@ footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav .
     line-height: 24px;
 }
 
-footer .footer-bottom .region-footer-end #block-i2-theme-sitemap .navbar-nav>li:first-child,
-footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav>li:first-child {
+footer .footer-bottom .region-footer-end #block-i2-theme-sitemap .navbar-nav>li:first-child {
     border-right: 1px solid #787878;
     padding-right: 20px;
     margin-right: 20px;
+}
+
+footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav>li:not(:first-child) {
+    border-left: 1px solid #787878;
+    padding-left: 20px;
+    margin-left: 20px;
 }
 
 footer .footer-bottom #block-i2-theme-copyright-2 p {
@@ -3018,7 +3026,9 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     position: relative;
 }
 .page-node-18 .container-fluid.p-0 .row .sub-page-content::after,
-.page-node-8 .container-fluid.p-0 .row .sub-page-content::after {
+.page-node-8 .container-fluid.p-0 .row .sub-page-content::after,
+.page-node-79 .container-fluid.p-0 .row .sub-page-content::after,
+.page-node-80 .container-fluid.p-0 .row .sub-page-content::after {
     content: '';
     width: min(25%, 383px);
     aspect-ratio: 383 / 386;
@@ -3031,7 +3041,9 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 }
 .page-node-18 h1,
 .path-sitemap h1,
-.page-node-8 h1 {
+.page-node-8 h1,
+.page-node-79 h1,
+.page-node-80 h1 {
     background-image: url(../image/icon/h2-slash-gray.svg), url(../image/icon/h2-slash-gray.svg);
     background-position: left calc(50% - 1px), right calc(50% - 1px);    
     background-repeat: no-repeat;
@@ -3079,12 +3091,16 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 }
 
 /* Privacy Policy Page */
-.page-node-8 .container-fluid.p-0 .row .sub-page-content {
+.page-node-8 .container-fluid.p-0 .row .sub-page-content,
+.page-node-79 .container-fluid.p-0 .row .sub-page-content,
+.page-node-80 .container-fluid.p-0 .row .sub-page-content {
     padding-left: 0;
     padding-right: 0;
     position: relative;
 }
-.page-node-8 .sub-page-content .col-12 {
+.page-node-8 .sub-page-content .col-12,
+.page-node-79 .sub-page-content .col-12,
+.page-node-80 .sub-page-content .col-12 {
     width: 83.33333333%;
 }
 .page-node-8 .sub-page-content .col-12 h2 {
@@ -3093,6 +3109,21 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .page-node-8 .sub-page-content .col-12 h3 {
     color: #B72727;
     font-size: 22px;
+}
+
+/* Disclaimer Page */
+.disclaimer-box .title {
+    color: #fff;
+    font-size: 1.313em;
+    font-weight: 700;
+    line-height: 30px;
+    background-color: #B72727;
+    padding: 10px 20px;
+}
+.disclaimer-box .details {
+    padding: 20px;
+    background: #f2f2f2;
+    border-bottom: 2px solid #B72727;
 }
 
 /* Sitemap Page ******************************************/
@@ -3500,7 +3531,9 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
         right: 20px;
     }
     /* Privacy Policy Page */    
-    .page-node-8 .sub-page-content .col-12 {
+    .page-node-8 .sub-page-content .col-12,
+    .page-node-79 .sub-page-content .col-12,
+    .page-node-80 .sub-page-content .col-12 {
         width: 100%;
     }
 }
@@ -3975,6 +4008,11 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     }
     .sub-page-content .section-img-cont .section-img-cont-bg2-2 {
         height: 40%;
+    }
+
+    /* footer */
+    footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav {
+        margin-bottom: 20px;
     }
 }
 @media only screen and (max-width: 866.98px) {
@@ -4529,9 +4567,10 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     footer .footer-top .region-footer .navbar-nav .nav-link {
         font-size: 20px;
     }
-    footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav {
-        margin-bottom: 20px;
-    } 
+    footer .footer-bottom .region-footer-end #block-i2-theme-sitemap-2 .navbar-nav>li:not(:first-child) {        
+        padding-left: 15px;
+        margin-left: 15px;
+    }
 }
 
 @media only screen and (max-width: 567.98px) {
