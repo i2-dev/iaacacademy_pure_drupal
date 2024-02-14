@@ -1,6 +1,34 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Medium.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins Bold";
+    src: url(../fonts/Poppins-Bold.woff2);
+    font-weight: 700;
+}
+
 /* common ******************************************/
 body {
-    font-family: 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-family: 'Poppins', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+b, strong {
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-weight: 700;  
 }
 
 .container,
@@ -51,6 +79,7 @@ p {
 .btn-read-more {
     background: url(../image/icon/arrow-red.svg) right center no-repeat;
     color: #B72727;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
@@ -156,8 +185,9 @@ header nav.navbar {
 
 header #block-i2-theme-main-navigation>ul.navbar-nav>li.nav-item>a {    
     color: #000;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 30px;    
     font-weight: bold;
     padding: 40px 20px;
     transition: all 0.2s ease;
@@ -512,6 +542,7 @@ main {
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);    
     font-size: 50px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-style: normal;
     font-weight: 700;
     line-height: 1.333;
@@ -607,7 +638,8 @@ main {
 }
 
 .frontpage-video-header h2 {
-    font-weight: 700;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-weight: 700;    
     line-height: 1.65;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -628,6 +660,7 @@ main {
 .view-frontpage-video::before {
     content: 'HKIAAC';
     font-size: 200px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 1.65;
     transform: translate(0, -50%) rotate(-90deg);
@@ -673,6 +706,7 @@ main {
 .frontpage-video-bg::before {
     content: 'HKIAAC';
     font-size: 200px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 1.65;
     transform: translate(0, -50%) rotate(-90deg);
@@ -1252,6 +1286,7 @@ main {
 
 .frontpage-strategy .strategy-card .content p.number {
     font-size: 80px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 1;
     -webkit-text-stroke: 1.5px #fff;
@@ -1284,6 +1319,7 @@ main {
 
 .frontpage-strategy .strategy-card .content .number span {
     font-size: 80px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     -webkit-text-stroke: 1.5px #fff;
     color: rgb(22, 22, 22, 0) !important;
@@ -1369,6 +1405,7 @@ main {
 .frontpage-motto-cont p {
     color: #B72727;
     font-size: calc(var(--font-size-xl) * 1.2);
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 1.64;
     text-transform: uppercase;
@@ -1515,6 +1552,7 @@ main {
 .iaaca-card .card-body .card-title {
     color: #3C4854;
     font-size: 20px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 1.5;
     width: 92.94%;
@@ -1941,6 +1979,7 @@ main {
 }
 .structure-wrap p {
     color: #000;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     margin-bottom: 0;
 }
@@ -2262,6 +2301,7 @@ body[lang_url="en/"] .aboutus-strengths .section-content ul li:nth-child(3) .str
     color: #B72727;
     font-size: 22px;
     font-style: italic;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;    
     line-height: 1.5;    
 }
@@ -2416,6 +2456,7 @@ body[lang_url="en/"] .aboutus-strengths .section-content ul li:nth-child(3) .str
 }
 
 .section-img-cont .section-cont ul li div:first-child {
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     flex: 0 0 auto;
     width: 90px;
@@ -2494,7 +2535,7 @@ body[lang_url="en/"] .aboutus-strengths .section-content ul li:nth-child(3) .str
 }
 .pagination .page-item.active > .page-link {
     color: #B72727;
-    background: none;
+    background: none;    
     font-weight: 700;
 }
 .pagination .page-item.pager__item--next > .page-link {
@@ -2628,7 +2669,8 @@ ol.breadcrumb>li:first-child::before {
 ol.breadcrumb>li>a {
     color: #B72727;
     font-size: 14px;
-    font-weight: bold;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-weight: 700;
     line-height: 22px;
     display: inline-block;
 }
@@ -2636,7 +2678,8 @@ ol.breadcrumb>li>a {
 ol.breadcrumb>li {
     color: #757575;
     font-size: 14px;
-    font-weight: bold;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-weight: 700;
     line-height: 22px;
 }
 
@@ -2912,6 +2955,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .links-wrap .links-body p {
     color: #3C4854;
     font-size: 20px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     transition: all 0.2s ease;
 }
@@ -2937,6 +2981,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .block-field-blockparagraphlinks-sectionbp-accordion-section-title>div {
     color: #3C4854;
     font-size: 20px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     transition: all 0.2s ease;
 }
@@ -3066,6 +3111,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .page-node-18 label {
     color: #B72727;
     font-size: 24px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
 }
 .page-node-18 .form-control {    
@@ -3119,6 +3165,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .disclaimer-box .title {
     color: #fff;
     font-size: 1.313em;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
     line-height: 30px;
     background-color: #B72727;
@@ -3168,6 +3215,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .path-sitemap .sitemap-item ul>li>a {
     color: #000;
     font-size: 24px;
+    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     font-weight: 700;
 }
 .path-sitemap .sitemap-item ul ul>li>a {
