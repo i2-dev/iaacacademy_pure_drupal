@@ -8,6 +8,12 @@
     src: url(../fonts/Poppins-Bold.woff2);
     font-weight: 700;
 }
+@font-face {
+    font-family: "Poppins BoldItalic";
+    src: url(../fonts/Poppins-BoldItalic.woff2);
+    font-weight: 700;
+    font-style: italic;
+}
 
 /* common ******************************************/
 body {
@@ -2217,9 +2223,10 @@ main {
 }
 .aboutus-strengths .section-content ul li .strengths-cover p {
     color: #B72727;
+    font-family: 'Poppins BoldItalic', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
     line-height: 1;
     font-style: italic;
-    font-weight: bold;
+    font-weight: 700;
 }
 .strengths-cover-text-sm {    
     font-size: 30px;        
@@ -2300,8 +2307,8 @@ body[lang_url="en/"] .aboutus-strengths .section-content ul li:nth-child(3) .str
 .strengths-back-title {
     color: #B72727;
     font-size: 22px;
-    font-style: italic;
-    font-family: 'Poppins Bold', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-family: 'Poppins BoldItalic', 'arial', '微軟正黑體', 'Microsoft JhengHei', '微软雅黑', 'Microsoft YaHei', sans-serif;
+    font-style: italic;    
     font-weight: 700;    
     line-height: 1.5;    
 }
