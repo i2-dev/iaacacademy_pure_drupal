@@ -3064,11 +3064,11 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .sub-page-content .block-field-blocknodeprogrammebody h3 {
     font-size: calc(var(--font-size-lg) * 0.667);
 }
-.sub-page-content ul {
+.sub-page-content ul:not(.pagination) {
     margin-bottom: 20px;
     padding-left: 0;
 }
-.sub-page-content ul li {
+.sub-page-content ul:not(.pagination) li {
     background: url(../image/icon/ul-slash-red.svg) left 2px no-repeat; 
     background-size: auto 20px;   
     line-height: 1.5;
