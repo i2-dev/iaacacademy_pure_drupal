@@ -59,7 +59,7 @@ We call a macro which calls itself to render the full tree.
             {% if menu_level == 0 and item.is_expanded %}
             <li{{ item.attributes.addClass('nav-item', 'dropdown') }}>
                 {# {{ link(item.title, item.url, { 'class': link_class, 'role': 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': 'false', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }} #}
-                {{ link(item.title, item.url, { 'class': link_class, 'role': 'button', 'aria-expanded': 'false', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }}
+                {{ link(item.title, item.url, { 'class': link_class, 'role': 'button', 'aria-expanded': 'false'}) }}
             {% else %}
             <li{{  item.attributes.addClass(list_item_classes) }}>
                {{ link(item.title, item.url, { 'class': link_class }) }}

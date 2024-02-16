@@ -15,6 +15,7 @@ jQuery(function ($) {
         // languageswitcher 點擊
         $(function () {
             var text_active = $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"] .is-active>a').text();
+            console.log(text_active );
             $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"]').before('<div class="dropdown-toggle">' + text_active + '</div>');
             $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"]').addClass('dropdown-menu');
             $("#block-i2-theme-languageswitcher .dropdown-toggle").click(function () {
@@ -61,7 +62,13 @@ jQuery(function ($) {
             var inputValue = $(this).val();
             $(document).keypress(function (e) {
                 if (e.which == 13) {
-                    window.location.href = ('/search-0?keys=' + inputValue);
+                    if (url.indexOf("/zh-hant") >= 0) {
+                        window.location.href = ('/zh-hant/search-0?keys=' + inputValue);
+                    } else if (url.indexOf("/zh-hans") >= 0) {
+                        window.location.href = ('/zh-hans/search-0?keys=' + inputValue);
+                    } else { 
+                        window.location.href = ('/search-0?keys=' + inputValue);
+                    };
                 }
             });
         });
