@@ -23,7 +23,7 @@ jQuery(function ($) {
         });
         var frontpagebannerSwiper = new Swiper(".frontpagebanner-Swiper", {
             autoplay: {
-                delay: 3000,
+                delay: 6000,
             },
             speed: 1000,
             fadeEffect: {
