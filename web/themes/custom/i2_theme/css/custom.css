@@ -1516,6 +1516,7 @@ main {
     clip-path: polygon(0 0, 100% 0%, 100% 68.24%, 92.94% 100%, 0 100%);
     transition: all 0.2s ease;
     display: block;
+    position: absolute;
 }
 .iaaca-card.card-detail:hover .card-img-top>img {
     opacity: 0.6;

@@ -15,7 +15,6 @@ jQuery(function ($) {
         // languageswitcher 點擊
         $(function () {
             var text_active = $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"] .is-active>a').text();
-            console.log(text_active );
             $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"]').before('<div class="dropdown-toggle">' + text_active + '</div>');
             $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"]').addClass('dropdown-menu');
             $("#block-i2-theme-languageswitcher .dropdown-toggle").click(function () {
