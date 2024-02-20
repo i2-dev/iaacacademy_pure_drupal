@@ -9,7 +9,7 @@ jQuery(function ($) {
         //     crossFade: true,
         // },
         watchOverflow: true,
-        // loop: true,
+        loop: true,
         pagination: {
             el: ".frontpageNews-pagination",
             clickable: true,
