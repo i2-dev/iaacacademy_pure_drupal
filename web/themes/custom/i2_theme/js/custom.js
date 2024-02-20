@@ -72,9 +72,9 @@ jQuery(function ($) {
             });
         });
         // header navnbar 手機端
-        var frontpagebannerSwiper = new Swiper(".video-Swiper", {
+        var frontpagevideoSwiper = new Swiper(".video-Swiper", {
             autoplay: {
-                delay: 3000,
+                delay: 5000,
             },
             speed: 1000,
             fadeEffect: {

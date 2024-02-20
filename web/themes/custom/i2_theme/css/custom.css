@@ -4166,7 +4166,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .view-frontpage-video .swiper-button-next:not(.swiper1-button-next),
     .view-frontpage-video .swiper-button-prev:not(.swiper1-button-prev) {
         top: calc(50% - 100px);
-    }
+    }    
 
     /* frontpage - Mission */
     /* Section - Left Img - Right Content */
@@ -4310,9 +4310,14 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .frontpage-motto-cont p {
         letter-spacing: -0.9px;
     }
-
+    
     .frontpage-motto-img {
+        margin-top: 25px;
         padding-bottom: 25px;
+    }
+
+    .frontpage-motto::before {
+        width: 20%;
     }
 
     /* frontpage - new */
