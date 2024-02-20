@@ -4316,7 +4316,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
         padding-bottom: 25px;
     }
 
-    .frontpage-motto::before {
+    .frontpage-motto::after {
         width: 20%;
     }
 
