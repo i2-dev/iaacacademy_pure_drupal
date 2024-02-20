@@ -4638,4 +4638,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     header {
         padding: 15px 0;
     }
+    header .offcanvas .offcanvas-body .region-nav-main {
+        padding-left: 0;
+    }
 }
