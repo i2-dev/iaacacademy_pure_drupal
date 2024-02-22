@@ -97,6 +97,7 @@ jQuery(function ($) {
             $(this).before('<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">X</button>');
         });
         //  frontpage video
+        $('#academyModal .modal-header .modal-title').text('Video');
         $(".video-Swiper .video-content-wrap").click(function () {
             var title = $.trim($(this).find('.video-content-title').text());
             var img_link = $(this).find('>div>img').attr('src');
