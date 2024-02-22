@@ -376,12 +376,14 @@ header .navbar-toggler .navbar-toggler-button {
 }
 
 header .navbar-toggler .navbar-toggler-button>span {
+    background: #B72727;
+    font-size: 16px;
+    text-indent: -9999px;
+    display: block;
     width: 28px;
     height: 3px;
-    background: #B72727;
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0;
+    overflow: hidden;
+    margin-bottom: 6px;    
 }
 
 header .navbar-toggler .navbar-toggler-button>span:last-child {
