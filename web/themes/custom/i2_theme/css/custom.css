@@ -2932,11 +2932,11 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 .block-views-blockblock-news-block-2 {
     position: relative;
 }
-.block-views-blockblock-news-block-2 .view-content {
+/* .block-views-blockblock-news-block-2 .view-content {
     justify-content: space-between;
     display: flex;
     flex-flow: wrap;
-}
+} */
 .block-views-blockblock-news-block-2 .view-content .views-row {
     flex-shrink: unset;
     transition-property: unset;
