@@ -2893,8 +2893,10 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
 }
 
 .research-section .item:nth-child(1) img {
+    width: 100%;
+    height: auto;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 79.24%, 92.94% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 79.24%, 92.94% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 79.24%, 92.94% 100%, 0 100%);    
 }
 
 .research-section .item:nth-child(2) {
