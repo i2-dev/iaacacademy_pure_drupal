@@ -4595,8 +4595,8 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     }
 
     /* research page ***********************************************/    
-    .research-section .item:nth-child(2) h2 {
-        margin-top: 30px;
+    .research-section .item:nth-child(1) img {
+        margin-bottom: 30px;
     }
 
     /* Contact us */
