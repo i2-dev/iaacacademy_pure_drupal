@@ -3760,12 +3760,7 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
         left: 26px;
         width: 280px;
         margin-top: 13px;
-    }
-
-    /* research page ***********************************************/    
-    .research-section .item:nth-child(2) h2 {
-        margin-top: 30px;
-    }    
+    }     
 
     /* frontpage banner */
     .view-frontpage-banner .frontpagebanner-left {
@@ -4597,6 +4592,11 @@ footer .footer-bottom #block-i2-theme-copyright-2 p {
     .block-views-blockprogramme-listing-block-1 .view-programme-listing .swiper-button-prev,
     .block-views-blockprogramme-listing-block-2 .view-programme-listing .swiper-button-prev {        
         top: 29vw;
+    }
+
+    /* research page ***********************************************/    
+    .research-section .item:nth-child(2) h2 {
+        margin-top: 30px;
     }
 
     /* Contact us */
