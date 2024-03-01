@@ -42,6 +42,21 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+
+    {% if 'i2hk.net' in site_url|render|render %}
+      <!-- dev -->
+    {% else %}
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-V91GXQXPEM"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-V91GXQXPEM');
+      </script>
+    {% endif %}
+
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#
