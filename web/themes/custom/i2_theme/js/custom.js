@@ -26,6 +26,7 @@ jQuery(function ($) {
                 delay: 6000,
             },
             speed: 1000,
+            effect: 'fade',
             fadeEffect: {
                 crossFade: true,
             },
