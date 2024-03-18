@@ -2694,7 +2694,8 @@ ol.breadcrumb>li {
     line-height: 22px;
 }
 
-.page-node-type-programme .breadcrumb-item+.breadcrumb-item:last-child {
+.page-node-type-programme .breadcrumb-item+.breadcrumb-item:last-child,
+.page-node-type-feed .breadcrumb-item+.breadcrumb-item:last-child {
     text-indent: -9999px;
     overflow: hidden;
 }
