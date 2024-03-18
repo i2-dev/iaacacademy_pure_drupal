@@ -66,7 +66,7 @@ jQuery(function ($) {
                         window.location.href = ('/zh-hant/search-0?keys=' + inputValue);
                     } else if (url.indexOf("/zh-hans") >= 0) {
                         window.location.href = ('/zh-hans/search-0?keys=' + inputValue);
-                    } else { 
+                    } else {
                         window.location.href = ('/search-0?keys=' + inputValue);
                     };
                 }
@@ -129,6 +129,32 @@ jQuery(function ($) {
             $("#year_time").html(year);
         });
         $('.block-views-blockblock-news-block-2 .view-content .views-row').removeClass('swiper-slide');
+        // news Details
+        var NewsModalSwiper = new Swiper(".NewsModalSwiper", {
+            // loop: true,
+            pagination: {
+                el: ".NewsModalswiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".NewsModalswiper-button-next",
+                prevEl: ".NewsModalswiper-button-prev",
+            },
+        });
+        $('.page-node-type-feed .block-field-blocknodefeedfield-content').addClass('row');
+        $('.page-node-type-feed .block-field-blocknodefeedfield-content>div').each(function () {
+            $(this).addClass('col-12 col-md-6 col-lg-4 col-xl-3').attr({
+                'data-bs-toggle': 'modal',
+                'data-bs-target': '#NewsModal'
+            });
+            var img_url = $(this).find('.field--name-bp-image-field img').attr('src');
+            var text = $.trim($(this).find('.field--name-bp-header').text());
+            NewsModalSwiper.appendSlide('<div class="swiper-slide"><img loading="lazy" src="' + img_url + '" class="img-fluid"/><p>' + text + '</p></div>'); //加到Swiper的最后
+        });
+        $(".page-node-type-feed .block-field-blocknodefeedfield-content>div").click(function () {
+            var index = $(".page-node-type-feed .block-field-blocknodefeedfield-content>div").index(this);
+            NewsModalSwiper.slideTo(index);
+        });
         // links
         $('.paragraph--type--links').addClass('container-xxl');
         $('.paragraph--type--links>div.paragraph__column').addClass('row');
