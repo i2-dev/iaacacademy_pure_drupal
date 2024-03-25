@@ -1877,7 +1877,8 @@ main {
     object-position: right;
     /* aspect-ratio: 114 / 42; */
 }
-.page-node-30 .sub-page-banner>.layout__region--second .field--name-field-page-banner>img {
+.page-node-30 .sub-page-banner>.layout__region--second .field--name-field-page-banner>img,
+.page-node-type-feed .sub-page-banner>.layout__region--second .field--name-field-page-banner>img {
     object-position: left;
 }
 .sub-page-banner>.layout__region--second .block-system-breadcrumb-block {
