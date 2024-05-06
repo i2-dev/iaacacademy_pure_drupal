@@ -1,0 +1,11 @@
+name: Flood Notif via cronjob (i2)
+description: Flood Notification via cronjob
+type: module
+# core: 8.x
+
+version: '8.x-1.0'
+package: 'i2'
+core: '8.x'
+core_version_requirement: ^8 || ^9 || ^10
+project: 'i2_cc_via_cronjob'
+datestamp: 1714987287

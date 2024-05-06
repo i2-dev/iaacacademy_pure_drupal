@@ -1,0 +1,82 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * @file
+ * The main module file.
+ *
+ * The main module file contains hooks to create the permissions used by the
+ * module, to log the data, and to expose the module to views.
+ */
+
+/**
+ * Implements hook_cron().
+ *
+ * We implement hook_cron() to do "background" processing. It gets called every
+ * time the Drupal cron runs. We then decide what has to happen in response.
+ *
+ */
+function i2_cc_via_cronjob_cron()
+{
+   $site_name = \Drupal::config('system.site')->get('name');
+   $cc_begin_ts = REQUEST_TIME;
+   drupal_flush_all_caches();
+   // $cc_end_ts = REQUEST_TIME;
+
+   // $cc_begin = format_date($cc_begin_ts, 'long');
+   $formatter = \Drupal::service('date.formatter');
+   $cc_begin = $formatter->format($cc_begin_ts, 'long');
+
+
+   $log_msg = "All Caches have been cleared in [" . $site_name . "] by Cron (Start time: " . $cc_begin . "). ";
+
+   \Drupal::logger('i2_cc_via_cronjob')->notice($log_msg);
+
+   // Send Email Notif to site.mail
+   $email_title = 'i2_cc_via_cronjob finished';
+
+   $mailManager = \Drupal::service('plugin.manager.mail');
+   $module = 'i2_cc_via_cronjob';
+   $key = 'i2_cc_via_cronjob_finished';
+   // $to = \Drupal::config('system.site')->get('mail');
+   $to = 'wilson@i2hk.com';
+
+   $params['email_message'] = $log_msg;
+   $params['email_title'] = $email_title;
+   $langcode = \Drupal::currentUser()->getPreferredLangcode();
+   $send = true;
+
+   $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+   if ($result['result'] !== true) {
+      $message = t('There was a problem sending your message and it was not sent.');
+      \Drupal::logger('i2_cc_via_cronjob')->error($message);
+   } else {
+      $message = t('Your message has been sent.');
+      \Drupal::logger('i2_cc_via_cronjob')->notice($message);
+   }
+}
+
+
+
+
+/**
+ * Implements hook_mail()
+ */
+// Ref: https://www.valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8
+
+function i2_cc_via_cronjob_mail($key, &$message, $params)
+{
+   $options = array(
+      'langcode' => $message['langcode'],
+   );
+
+   switch ($key) {
+      case 'i2_cc_via_cronjob_finished':
+         $message['from'] = \Drupal::config('system.site')->get('mail');
+         $message['subject'] = t('@title', array('@title' => $params['email_title']), $options);
+         $message['body'][] = $params['email_message'];
+         break;
+   }
+}
