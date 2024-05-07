@@ -79,12 +79,11 @@ function i2_flood_notif_via_cronjob_cron()
    // Analytics the array of failed
    foreach ($failed_user_data as $key => $val) {
       if ($val["count"] >= $count_of_fail_for_notif) {
-         $email_body_details .= "------------------------------------ <br>";
+         $email_body_details .= "------------------------------------------------------------------------ <br>";
          $email_body_details .= "[Account Name] :" . $val["user"]["name"] . " (uid: " . $val["user"]["uid"] . ") <br>";
          $email_body_details .= "[Number of Attempts] :" . $count_of_fail_for_notif . "<br>";
          $email_body_details .= "[Time of Attempts] :" . $val["count"] . "<br>";
          $email_body_details .= "[IP Address] :" . $val["ip_address"] . "<br>";
-         $email_body_details .= "------------------------------------ <br>";
       }
    }
 
