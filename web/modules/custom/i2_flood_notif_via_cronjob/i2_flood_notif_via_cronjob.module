@@ -1,6 +1,6 @@
 <?php
 
-use Drupal\Core\Database\Database;
+// use Drupal\Core\Database\Database;
 
 /**
  * @file
@@ -19,14 +19,16 @@ use Drupal\Core\Database\Database;
  */
 function i2_flood_notif_via_cronjob_cron()
 {
+   $count_of_fail_for_notif = 5;
+   $to_email = "wilsonleeapp@gmail.com";
+
    $site_name = \Drupal::config('system.site')->get('name');
-   // $cc_begin_ts = REQUEST_TIME;
-   // $cc_end_ts = REQUEST_TIME;
+   $checking_begin_ts = REQUEST_TIME;
+   $checking_end_ts = REQUEST_TIME;
 
-   // $cc_begin = format_date($cc_begin_ts, 'long');
+   // $checking_begin = format_date($checking_begin_ts, 'long');     // Drupal 8 outdated
    $formatter = \Drupal::service('date.formatter');
-   // $cc_begin = $formatter->format($cc_begin_ts, 'long');
-
+   $checking_begin = $formatter->format($checking_begin_ts, 'long');
 
 
    $result = \Drupal::database()->select('flood', 'f')
@@ -37,6 +39,11 @@ function i2_flood_notif_via_cronjob_cron()
 
    $rows = array();
    $rows = null;
+
+   $failed_user_data = array();
+
+   $email_body_details = "";
+
    foreach ($result as $row => $content) {
       $rows[] = array(
          'data' => array(
@@ -46,26 +53,64 @@ function i2_flood_notif_via_cronjob_cron()
             $content->timestamp,
          )
       );
+
+      $identifier_str = $content->identifier;
+      $identifier_arr = explode("-", $identifier_str);
+      $uid = $identifier_arr[0];
+      $client_ip = $identifier_arr[1];
+
+
+      // User Info
+      $user = \Drupal\user\Entity\User::load((int)$uid);
+      $user_name = $user->name->getString();
+
+      if (!(isset($failed_user_data["uid_" . $uid]))) {
+         $failed_user_data["uid_" . $uid]["user"]["uid"] = $uid;
+         $failed_user_data["uid_" . $uid]["user"]["name"] = $user_name;
+         $failed_user_data["uid_" . $uid]["count"] = 1;
+         $failed_user_data["uid_" . $uid]["ip_address"] = $client_ip . ", ";
+      } else {
+         $failed_user_data["uid_" . $uid]["count"]++;
+         $failed_user_data["uid_" . $uid]["ip_address"] .= $client_ip . ", ";
+      }
    }
 
-   if ($rows != null) {
-      $log_msg = json_encode($rows);
 
-      // $log_msg = "This is a flood notification, Please check the logs for more information. ";
+   // Analytics the array of failed
+   foreach ($failed_user_data as $key => $val) {
+      if ($val["count"] >= $count_of_fail_for_notif) {
+         $email_body_details .= "------------------------------------ <br>";
+         $email_body_details .= "[Account Name] :" . $val["user"]["name"] . " (uid: " . $val["user"]["uid"] . ") <br>";
+         $email_body_details .= "[Number of Attempts] :" . $count_of_fail_for_notif . "<br>";
+         $email_body_details .= "[Time of Attempts] :" . $val["count"] . "<br>";
+         $email_body_details .= "[IP Address] :" . $val["ip_address"] . "<br>";
+         $email_body_details .= "------------------------------------ <br>";
+      }
+   }
 
-      \Drupal::logger('i2_flood_notif_via_cronjob')->notice($log_msg);
+   // Send the email
+   if ($email_body_details != "") {
+      $email_msg = json_encode($failed_user_data);
+      // $email_msg = "This is a flood notification, Please check the logs for more information. ";
+
+      \Drupal::logger('i2_flood_notif_via_cronjob')->notice($email_msg);
 
       // Send Email Notif to site.mail
-      $email_title = 'This is a flood notification. ';
+      $email_title = 'Multiple Failed Login Attempts Detected IAAC Mainsite at ' . $checking_begin;
+
+      $email_body_intro = 'These attempts occurred within a short period and were flagged by our security system. <br>';
+      $email_body_intro .= '================================================================== <br>';
+      $email_body_intro .= 'Details of the Activity: <br>';
 
       $mailManager = \Drupal::service('plugin.manager.mail');
       $module = 'i2_flood_notif_via_cronjob';
       $key = 'i2_flood_notif_via_cronjob_finished';
       // $to = \Drupal::config('system.site')->get('mail');
-      $to = 'wilson@i2hk.com';
+      $to = $to_email;
 
-      $params['email_message'] = $log_msg;
       $params['email_title'] = $email_title;
+      $params['email_message'] = $email_body_intro . $email_body_details;
+
       $langcode = \Drupal::currentUser()->getPreferredLangcode();
       $send = true;
 
