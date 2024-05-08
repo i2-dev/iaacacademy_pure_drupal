@@ -1,0 +1,6 @@
+system.i2_flood_notif_via_cronjob_settings:
+  title: i2_flood_notif_via_cronjob Settings
+  parent: system.admin_config_system
+  description: 'Configure i2_flood_notif_via_cronjob settings'
+  route_name: i2_flood_notif_via_cronjob.settings
+  weight: 21

@@ -1,0 +1,7 @@
+i2_flood_notif_via_cronjob.settings:
+  path: '/admin/config/system/flood-notif-via-cronjob-settings'
+  defaults:
+    _form: \Drupal\i2_flood_notif_via_cronjob\Form\sSettingsForm
+    _title: 'i2_flood_notif_via_cronjob Settings'
+  requirements:
+    _permission: 'administer content types'
