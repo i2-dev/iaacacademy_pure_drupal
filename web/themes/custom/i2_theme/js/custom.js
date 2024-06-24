@@ -12,6 +12,18 @@ jQuery(function ($) {
                 $('body').removeClass('scrolled-fixed');
             }
         });
+        // add login button
+        var SearchlinkContent = `
+                <div id="block-i2-theme-headerlogin">
+                    <section class="header-login" title="login">
+                        <a href="https://moodle43-v2.dev.i2hk.net/login/index.php" target="">
+                            <img src="/themes/custom/i2_theme/image/icon/login.svg" alt="login">
+                            <span>Login</span>
+                        </a>
+                    </section>
+                </div>
+                 `;
+        $('#block-i2-theme-searchlink').after(SearchlinkContent);
         // languageswitcher 點擊
         $(function () {
             var text_active = $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"] .is-active>a').text();
@@ -173,12 +185,18 @@ jQuery(function ($) {
             }, 200);
             return false;
         });
+        // remove login target
+        $(function () {
+            $('header .header-login>a').attr('target', '');
+        });
         // translate
         setTimeout(function () {
             if (url.indexOf("/zh-hant") >= 0) {
                 $('.block-system-breadcrumb-block ol.breadcrumb>li:nth-child(1)>a').text('首頁');
+                $('header .header-login span').text('登入');
             } else if (url.indexOf("/zh-hans") >= 0) {
                 $('.block-system-breadcrumb-block ol.breadcrumb>li:nth-child(1)>a').text('首页');
+                $('header .header-login span').text('登入');
             } else { };
         }, 200);
         // AOS

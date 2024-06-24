@@ -395,7 +395,18 @@ header .navbar-toggler .navbar-toggler-button>span:last-child {
 header #block-i2-theme-main-navigation>ul.navbar-nav>li.nav-item>button {
     display: none;
 }
-
+header .header-login {
+    background-color: #B72727;
+    padding: 4px 10px;
+    margin-left: 35px;
+}
+header .header-login span {
+    color: #fff;
+    font-size: 18px;
+}
+header .header-login img {
+    width: 20px;
+}
 /* frontpage ******************************************/
 .path-frontpage main {
     position: relative;
