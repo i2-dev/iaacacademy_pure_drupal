@@ -16,7 +16,7 @@ jQuery(function ($) {
         var SearchlinkContent = `
                 <div id="block-i2-theme-headerlogin">
                     <section class="header-login" title="login">
-                        <a href="https://moodle43-v2.dev.i2hk.net/login/index.php" target="">
+                        <a href="javascript:void(0);" target="_blank">
                             <img src="/themes/custom/i2_theme/image/icon/login.svg" alt="login">
                             <span>Login</span>
                         </a>
@@ -24,6 +24,14 @@ jQuery(function ($) {
                 </div>
                  `;
         $('#block-i2-theme-searchlink').after(SearchlinkContent);
+        var currentUrl = window.location.href;
+        if (currentUrl.indexOf('https://iaacd10.i2hk.net') !== -1) {
+            $('header .header-login>a').attr('href', 'https://iaacmoodle.i2hk.net');
+        } else if (currentUrl.indexOf('https://iaacacademyd.dev.i2hk.net/') !== -1) {
+            $('header .header-login>a').attr('href', 'https://moodle43-v2.dev.i2hk.net/login/index.php');
+        } else {
+            // 执行其他情况下的功能
+        }
         // languageswitcher 點擊
         $(function () {
             var text_active = $('header #block-i2-theme-languageswitcher ul[data-block="nav_additional"] .is-active>a').text();
@@ -184,10 +192,6 @@ jQuery(function ($) {
                 scrollTop: 0
             }, 200);
             return false;
-        });
-        // remove login target
-        $(function () {
-            $('header .header-login>a').attr('target', '');
         });
         // translate
         setTimeout(function () {
