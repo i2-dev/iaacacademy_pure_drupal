@@ -26,7 +26,7 @@ jQuery(function ($) {
         $('#block-i2-theme-searchlink').after(SearchlinkContent);
         var currentUrl = window.location.href;
         if (currentUrl.indexOf('https://iaacd10.i2hk.net') !== -1) {
-            $('header .header-login>a').attr('href', 'https://iaacmoodle.i2hk.net');
+            $('header .header-login>a').attr('href', 'https://iaacmoodle.i2hk.net/login/index.php');
         } else if (currentUrl.indexOf('https://iaacacademyd.dev.i2hk.net/') !== -1) {
             $('header .header-login>a').attr('href', 'https://moodle43-v2.dev.i2hk.net/login/index.php');
         } else {
