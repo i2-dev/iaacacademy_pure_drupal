@@ -57,3 +57,6 @@ web/modules/.DS_Store
 /_htpasswd
 
 /test
+
+# weblog created by server
+web/weblog
