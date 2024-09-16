@@ -43,7 +43,7 @@
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
 
-    {% set site_url = url("<current>") %}
+    {# {% set site_url = url("<current>") %}
     {% if 'i2hk.net' in site_url|render|render %}
       <!-- dev -->
     {% else %}
@@ -56,7 +56,7 @@
 
         gtag('config', 'G-V91GXQXPEM');
       </script>
-    {% endif %}
+    {% endif %}   disabled by client (since 2024-09) #}
 
   </head>
   <body{{ attributes.addClass(body_classes) }}>

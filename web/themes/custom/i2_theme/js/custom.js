@@ -12,6 +12,29 @@ jQuery(function ($) {
                 $('body').removeClass('scrolled-fixed');
             }
         });
+        // video paly
+        $(document).ready(function () {
+            var video = $('.page-node-type-feed .block-field-blocknodefeedfield-news-video video').get(0);
+            var hasPlayed = false; // 确保视频只播放一次
+
+            $(window).on('scroll', function () {
+                var target = $('.page-node-type-feed .block-field-blocknodefeedfield-news-video video');
+                var targetOffset = target.offset().top;
+                var windowHeight = $(window).height();
+                var scrollTop = $(window).scrollTop();
+                // console.log('targetOffset:'+targetOffset);
+                // console.log('windowHeight:'+windowHeight);
+                // console.log('scrollTop:'+scrollTop);
+                // 检查目标 div 是否进入视口
+                if (!hasPlayed && ((scrollTop + 200) > targetOffset)) {
+                    video.play().then(function () {
+                        hasPlayed = true; // 标记视频已播放
+                    }).catch(function (error) {
+                        console.error('播放失败:', error);
+                    });
+                }
+            });
+        });
         // add login button
         var SearchlinkContent = `
                 <div id="block-i2-theme-headerlogin">
@@ -203,6 +226,24 @@ jQuery(function ($) {
                 $('header .header-login span').text('登入');
             } else { };
         }, 200);
+
+        // marquee 2024/8/28
+        $(document).ready(function() {
+            let $marquee = $('#marquee');
+            let $content = $('.marquee-content');
+    
+            // 计算内容总宽度并设置动画时长
+            let totalWidth = $content.width();
+            let animationDuration = (totalWidth / 50) + 's'; // 根据内容宽度调整动画时长
+            $content.css('animation-duration', animationDuration);
+    
+            // 鼠标悬停事件
+            $marquee.hover(function() {
+                $content.css('animation-play-state', 'paused');
+            }, function() {
+                $content.css('animation-play-state', 'running');
+            });
+        });
         // AOS
         AOS.init({
             duration: 1000,

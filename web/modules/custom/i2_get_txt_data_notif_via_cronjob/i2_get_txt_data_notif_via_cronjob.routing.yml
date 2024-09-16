@@ -1,0 +1,7 @@
+i2_get_txt_data_notif_via_cronjob.settings:
+  path: '/admin/config/system/get-txt-data-via-cronjob-settings'
+  defaults:
+    _form: \Drupal\i2_get_txt_data_notif_via_cronjob\Form\sSettingsForm
+    _title: 'i2_get_txt_data_notif_via_cronjob Settings'
+  requirements:
+    _permission: 'administer content types'
