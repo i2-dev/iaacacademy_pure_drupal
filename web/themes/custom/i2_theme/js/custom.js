@@ -37,7 +37,7 @@ jQuery(function ($) {
         });
         // add login button
         var SearchlinkContent = `
-                <div id="block-i2-theme-headerlogin">
+                <div id="block-i2-theme-headerlogin" class="d-none">
                     <section class="header-login" title="login">
                         <a href="javascript:void(0);" target="_blank">
                             <img src="/themes/custom/i2_theme/image/icon/login.svg" alt="login">
