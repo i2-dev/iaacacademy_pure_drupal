@@ -44,6 +44,7 @@ web/modules/.DS_Store
 *.key
 *.swp
 *.mp4
+*.sql
 
 # Bak files
 *--bak*
@@ -60,4 +61,3 @@ web/modules/.DS_Store
 
 # weblog created by server
 web/weblog
-web/modules/custom/i2_flood_notif_via_cronjob/
