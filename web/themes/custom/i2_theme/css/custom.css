@@ -161,7 +161,7 @@ p {
 header {
     position: fixed;
     width: 100%;
-    z-index: 99;
+    z-index: 100;
     background: linear-gradient(180deg, #FFF 32.58%, rgba(255, 255, 255, 0.00) 91.98%);
     transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
